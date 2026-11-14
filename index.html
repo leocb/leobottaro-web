@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en" data-type="service" data-radius="soft" data-buttons="solid" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Leonardo Bottaro: software developer and professor</title>
+<meta name="description" content="Software developer and professor. Senior software engineer at Oracle, professor at UniSALESIANO, and maker of Canal4, Gabaritero and LS9 Remote.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Leonardo Bottaro: software developer and professor">
+<meta property="og:description" content="Software developer and professor. Senior software engineer at Oracle, professor at UniSALESIANO, and maker of Canal4, Gabaritero and LS9 Remote.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#fbfaf8">
+<!-- <link rel="canonical" href="https://leonardobottaro.example/"> -->
+<meta name="site-kind" content="other">
+<meta name="page-type" content="service">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #fbfaf8; --p-surface: #e7decd; --p-ink: #0a122a; --p-muted: #596173;
+  --p-accent: #698f3f; --p-accent-ink: #111111; --p-action: #4f7231; --p-action-ink: #ffffff;
+  --p-inv-bg: #0a122a; --p-inv-surface: #171f37; --p-inv-ink: #fbfaf8; --p-inv-muted: #9499a4;
+  --p-inv-accent: #698f3f; --p-inv-accent-ink: #111111; --p-inv-action: #698f3f; --p-inv-action-ink: #111111;
+  --font-display: "Host Grotesk", system-ui, sans-serif;
+  --font-text: "Host Grotesk", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.035em;
+  --display-tracking-xl: -0.04em;
+  --terra: #804e49;
+}
+/* hero */
+.hero-aside { display: grid; gap: var(--s-5); align-content: start; padding-top: var(--s-2); }
+.hero-aside p { margin: 0; }
+.hero-apps { list-style: none; padding: 0; margin: var(--s-2) 0 0; display: grid; }
+.hero-apps li { border-top: 1px solid var(--line); }
+.hero-apps li:first-child { border-top: 0; }
+.hero-apps a, .hero-apps .static { display: flex; align-items: center; gap: var(--s-3); min-height: 60px; color: var(--ink); }
+.hero-apps img { width: 40px; height: 40px; border-radius: 8px; display: block; }
+.hero-app-name { display: block; font-weight: 500; line-height: 1.3; }
+.hero-app-note { display: block; font-size: var(--t-small); color: var(--muted); }
+.hero-meta { display: grid; gap: var(--s-3); }
+.hero-bottom { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-top: var(--s-5); border-top: 1px solid var(--line); }
+.hero-bottom a { color: var(--ink); text-decoration-color: var(--accent); }
+@media (min-width: 1024px) {
+  .hero-split > .hero-copy, .hero-split > .hero-aside { align-self: center; }
+  .hero--statement h1 { font-size: clamp(48px, 4.6vw, 66px); }
+  .hero-apps a, .hero-apps .static { min-height: 64px; }
+  #apps { --padt: 64px; }
+}
+.hero--statement h1 { max-width: 30ch; }
+@media (max-width: 767px) {
+  .hero-bottom { grid-template-columns: 1fr 1fr; gap: var(--s-4) var(--s-5); }
+}
+/* apps */
+.app-card { display: flex; flex-direction: column; gap: var(--s-3); padding: var(--s-4); background: var(--surface); border-radius: var(--r-md); }
+.app-card__in { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s-4); align-items: start; }
+.app-shot { display: block; flex: none; margin: 0; border-radius: calc(var(--r-md) - 6px); overflow: hidden; line-height: 0; }
+.app-shot--portrait img { height: 388px; width: auto; object-fit: contain; display: block; }
+.app-shot--wide { width: 100%; }
+.app-shot--wide img { width: 100%; height: auto; object-fit: contain; display: block; }
+.app-copy { display: flex; flex-direction: column; gap: var(--s-2); align-items: start; height: 100%; }
+.app-copy p, .app-copy ul { margin: 0; }
+.app-copy .app-link { margin-top: auto; }
+.app-name { margin: 0; font-size: var(--t-card); font-weight: 500; line-height: 1.25; }
+.app-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--ink); font-weight: 500; }
+.app-link .m-arrow { width: 14px; height: 14px; color: var(--accent); }
+a.app-shot:focus-visible { outline-color: var(--ink); }
+@media (max-width: 1023px) { .app-shot--portrait img { height: 330px; } }
+@media (max-width: 767px) {
+  .app-card__in { grid-template-columns: 112px minmax(0, 1fr); gap: var(--s-3); }
+  .app-shot--portrait img { height: 280px; }
+}
+@media (max-width: 639px) {
+  .app-card__in { grid-template-columns: minmax(0, 1fr); }
+  .app-shot--portrait img { height: 315px; width: auto; max-width: 100%; }
+  .app-shot--wide img { height: auto; object-fit: contain; }
+  .app-copy .facts, .app-copy .t-small { display: none; }
+  .app-card { padding: var(--s-3); gap: 4px; }
+  #apps .section-head { margin-bottom: var(--s-5); }
+  .hero--statement h1 { font-size: clamp(30px, 8.4vw, 34px); }
+  .hero-copy > * + * { margin-top: var(--s-3); }
+  .hero-copy > .btn-row { margin-top: var(--s-5); }
+}
+/* work */
+.role-card { display: grid; gap: var(--s-3); align-content: start; padding: var(--s-4); border-top: 2px solid var(--ink); background: var(--surface); border-radius: var(--r-md); height: 100%; }
+.role-head { display: flex; align-items: center; gap: var(--s-3); }
+.role-head p { margin: 0; }
+.role-logo { width: 56px; height: 56px; flex: none; display: grid; place-items: center; overflow: hidden; }
+.role-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.role-card h3 { margin: 0; font-size: var(--t-card); font-weight: 500; line-height: 1.3; }
+.role-card p { margin: 0; }
+.role-title { margin: 0; font-size: var(--t-card); font-weight: 500; line-height: 1.3; }
+.facts { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s-2); }
+.facts li { position: relative; }
+.facts li::before { content: "–"; position: absolute; left: -14px; color: var(--accent); }
+.cv { list-style: none; padding: 0; margin: 0; display: grid; }
+.cv li { display: grid; grid-template-columns: calc((100% + 24px) / 2 - 24px) minmax(0, 1fr); column-gap: 24px; row-gap: 0; padding: 9px 0; border-top: 1px solid var(--line); align-items: start; }
+.cv-side { display: grid; justify-items: start; gap: 6px; }
+.cv li:first-child { border-top: 2px solid var(--ink); }
+.cv .when { margin: 0; font-size: var(--t-small); color: var(--muted); font-variant-numeric: tabular-nums; }
+@media (min-width: 1024px) { .group > .cv { flex: 1 1 auto; align-content: space-between; } }
+.career { margin-top: auto; padding-top: var(--s-3); }
+.career-list { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--s-3); align-items: end; }
+.career-list li { display: grid; grid-template-rows: 34px 96px auto auto 16px; justify-items: center; align-content: end; gap: 4px; text-align: center; }
+.career-logo { width: 34px; height: 34px; display: grid; place-items: center; }
+.career-logo img { width: 34px; height: 34px; object-fit: contain; display: block; border-radius: 5px; }
+.career-bar { align-self: end; width: 100%; height: calc(var(--bh) * 1px); border-radius: 3px 3px 0 0; background: color-mix(in oklab, var(--accent) 20%, var(--bg)); }
+.career-list li.is-current .career-bar { background: color-mix(in oklab, var(--accent) 38%, var(--bg)); }
+.career-year { margin: 4px 0 0; font-size: var(--t-small); color: var(--muted); }
+.career-co { margin: 0; font-weight: 500; line-height: 1.25; }
+.career-current { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #4f7231; }
+.career-list li:not(.is-current) .career-current { visibility: hidden; }
+.career-current::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: career-pulse 2.4s ease-in-out infinite; }
+@keyframes career-pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(0.7); } }
+@media (prefers-reduced-motion: reduce) { .career-current::before { animation: none; } }
+.cv .what { display: grid; gap: var(--s-1); align-content: start; }
+.cv .what p { margin: 0; }
+.what-head { margin: 0; font-weight: 500; }
+.cv-logo { width: 48px; height: 48px; display: grid; place-items: center; overflow: hidden; border-radius: var(--r-md); }
+.cv-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+/* skills */
+.skills-grid { row-gap: 10px; align-content: start; }
+#skills .section-head { margin-bottom: var(--s-5); }
+.skill-group { display: grid; gap: 8px; align-content: start; }
+.skill-head { display: block; }
+.skill-title { margin: 0; font-weight: 500; line-height: 1.2; font-size: 18px; }
+.chips { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px 12px; }
+.skill-group.span-12 .chips { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.chips li { display: block; min-width: 0; }
+.chip { display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 5px 8px; border-radius: 6px; background: var(--surface); font-size: 12px; line-height: 1.1; color: var(--ink); }
+.chips img, .chips svg { width: 16px; height: 16px; object-fit: contain; display: block; flex: none; }
+.chips svg { color: var(--accent); }
+.chip-dot { width: 16px; height: 16px; display: grid; place-items: center; flex: none; }
+.chip-dot::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); opacity: 0.55; }
+/* languages */
+.lang-grid { list-style: none; padding: 0; margin: 0; row-gap: var(--s-3); }
+.lang-card { display: flex; align-items: center; gap: var(--s-4); padding: var(--s-4); background: var(--surface); border-radius: var(--r-md); }
+.lang-card > img { width: 56px; height: auto; border-radius: 3px; display: block; flex: none; box-shadow: 0 0 0 1px var(--line); }
+.lang-card--plain { background: none; box-shadow: inset 0 0 0 1px var(--line); }
+.lang-body { display: grid; gap: 2px; align-content: start; }
+.lang-body p { margin: 0; }
+.lang-level { color: #414a5c; }
+/* life */
+.hobby-grid { row-gap: var(--s-4); }
+.hobby-card { display: flex; gap: var(--s-3); align-items: start; padding: var(--s-3); background: var(--surface); border-radius: var(--r-md); }
+.hobby-card:nth-child(even) { background: none; box-shadow: inset 0 0 0 1px var(--line); }
+.hobby-card p { margin: 0; }
+.hobby-card .t-card { font-weight: 500; }
+.production { margin-top: var(--s-7); }
+.production-grid { row-gap: var(--s-3); margin-top: var(--s-3); }
+.production-card { display: flex; align-items: center; gap: var(--s-2); padding: var(--s-3) var(--s-4); background: var(--surface); border-radius: var(--r-md); }
+.production-card p { margin: 0; }
+.volunteer { margin-top: var(--s-7); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gutter); row-gap: var(--s-4); }
+.volunteer > * { grid-column: 1 / span 6; }
+.volunteer > * + * { grid-column: 7 / span 6; }
+.volunteer .stat { margin: var(--s-2) 0 0; }
+.stat { font-size: clamp(28px, 2.8vw, 36px); line-height: 1; letter-spacing: -0.03em; }
+.volunteer p { margin: 0; }
+.volunteer p + p { margin-top: var(--s-3); }
+.volunteer .t-label { margin-top: var(--s-5); }
+/* hero: compact, it flows straight into the apps */
+.hero.hero--statement { height: auto; --hpadb: 56px; }
+.hero.hero--statement > .wrap { grid-template-rows: auto auto; align-content: start; height: auto; row-gap: var(--s-6); }
+
+@media (max-width: 1023px) { .career-list { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: var(--s-5); } }
+
+/* shared */
+.link { color: var(--ink); text-decoration-color: var(--accent); }
+#contact .closing__cta .btn { transition: none; }
+.closing__cta .btn { transition-property: background-color, border-color, box-shadow, transform; }
+.nav__link[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 6px; }
+.muted { color: var(--muted); }
+@media (max-width: 767px) {
+  .volunteer { margin-top: 96px; }
+  .hobby-grid { row-gap: var(--s-6); }
+  .production { margin-top: var(--s-8); }
+  .production-grid { gap: var(--s-5); }
+  .lang-card { padding: var(--s-3); gap: var(--s-3); }
+  .lang-card > img { width: 44px; }
+  .lang-grid { row-gap: var(--s-3); }
+}
+@media (max-width: 639px) {
+  #apps, #work, #skills, #languages, #life { --hm: 2; }
+  .cv li { grid-template-columns: 44px minmax(0, 1fr); column-gap: var(--s-3); padding: 6px 0; font-size: 13px; }
+  .cv-side { display: grid; justify-items: start; align-content: start; gap: 4px; }
+  .cv-logo { width: 44px; height: 44px; grid-row: 1; }
+  .cv-logo img { max-width: 36px; max-height: 36px; }
+  .cv .what p { font-size: 13px; }
+  .cv .when { font-size: 12px; }
+  .role-card { padding: var(--s-3); }
+  .role-card .facts { font-size: 13px; }
+  #work .section-head { margin-bottom: var(--s-5); }
+  #skills .section-head { margin-bottom: 6px; }
+  #skills .section-head p { display: none; }
+  .skills-grid { row-gap: var(--s-5); }
+  .skill-group { gap: 4px; }
+  .skill-title { font-size: 16px; }
+  .chips, .skill-group.span-12 .chips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px 10px; }
+  .chips li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .chip { font-size: 11px; padding: 5px 7px; }
+  .career-list { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: var(--s-4); }
+  .career-list li:last-child { justify-items: start; text-align: left; }
+  .volunteer { grid-template-columns: minmax(0, 1fr); row-gap: var(--s-5); }
+  .volunteer > *, .volunteer > * + * { grid-column: 1 / -1; }
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+</head>
+<body>
+<!-- type: service
+     palette: #fbfaf8 ground, #0a122a ink, #698f3f accent, #e7decd surface, #804e49 app mark
+     type: Host Grotesk. hero split. real app screenshots, no mock UI.
+     main action: Email Leonardo. GitHub: https://github.com/leocb -->
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Leonardo Bottaro</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#apps">Apps</a></div>
+      <div class="nav__item"><a class="nav__link" href="#work">Work</a></div>
+      <div class="nav__item"><a class="nav__link" href="#skills">Tools</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="nav__link" href="https://github.com/leocb">GitHub</a>
+      <a class="btn btn--primary" href="mailto:hello@leonardo.example">Email Leonardo</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--statement hero--split" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text grid hero-split">
+      <div class="hero-copy span-6">
+        <h1 id="hero-h">Leonardo Bottaro, software developer</h1>
+        <p class="t-lead">Senior software engineer at Oracle and professor at UniSALESIANO. I build .NET services, desktop apps and embedded systems, and I make the apps below.</p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="mailto:hello@leonardo.example">Email Leonardo</a>
+          <a class="btn btn--secondary" href="#apps">See the apps</a>
+        </div>
+
+      </div>
+      <div class="hero-aside span-6 start-7">
+        <div>
+          <p class="t-label">Apps I designed and created</p>
+          <ul class="hero-apps">
+            <li><a href="https://app.canal4.org"><img src="assets/img/canal4-icon.png" alt="" width="40" height="40"><span><span class="hero-app-name">Canal4</span><span class="hero-app-note">Venue broadcasts</span></span></a></li>
+            <li><a href="https://app.gabaritero.com"><img src="assets/img/gabaritero-icon.png" alt="" width="40" height="40"><span><span class="hero-app-name">Gabaritero</span><span class="hero-app-note">Answer-sheet grading, in beta</span></span></a></li>
+            <li><span class="static"><img src="assets/img/ls9-icon.png" alt="" width="40" height="40"><span><span class="hero-app-name">LS9 Remote</span><span class="hero-app-note">Mixer control for Android</span></span></span></li>
+          </ul>
+        </div>
+        <div class="hero-meta">
+          <div><p class="t-label">Current employment</p><p>Oracle</p><p>UniSALESIANO</p></div>
+          <div><p class="t-label">Based in</p><p>Brazil, remote</p></div>
+        </div>
+      </div>
+      <dl class="hero-facts hero-bottom">
+        <div><dt>Focus</dt><dd>.NET services, desktop apps, embedded systems</dd></div>
+        <div><dt>Teaching</dt><dd>Computer Engineering, Systems Analysis, Game Development</dd></div>
+        <div><dt>Volunteer</dt><dd>Church tech for 15 years</dd></div>
+        <div><dt>Links</dt><dd><a href="https://github.com/leocb">GitHub</a><br><a href="https://www.instagram.com/leobottaro.art/">@leobottaro.art</a></dd></div>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="section" id="apps" aria-labelledby="apps-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="apps-h">Apps</h2>
+        <p>Products I have designed and built. Open the app, or open the source on GitHub.</p>
+      </div>
+      <div class="grid">
+        <article class="app-card span-4">
+          <div class="app-card__in">
+            <a class="app-shot app-shot--portrait m-zoom" href="https://app.canal4.org"><img src="assets/img/canal4-app.jpg" alt="Canal4 event dashboard with channels, a broadcast button and active messages" width="865" height="1835" loading="lazy" data-source="client" data-subject="app"></a>
+            <div class="app-copy">
+              <h3 class="app-name">Canal4</h3>
+              <p>Venue broadcasts. Staff send a message from the web dashboard and it appears on the venue screens as a scrolling ticker.</p>
+              <ul class="facts">
+                <li>Web dashboard and Electron display app.</li>
+                <li>Real-time over SpacetimeDB, with a channel per room.</li>
+              </ul>
+              <p class="t-small muted">React 19 · Electron · SpacetimeDB</p>
+              <a class="app-link" href="https://app.canal4.org">Open Canal4 <svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="app-card span-4">
+          <div class="app-card__in">
+            <a class="app-shot app-shot--portrait m-zoom" href="https://app.gabaritero.com"><img src="assets/img/gabaritero-app.jpg" alt="Gabaritero grading screen with the scanned answer sheet and marked answers" width="899" height="1814" loading="lazy" data-source="client" data-subject="app"></a>
+            <div class="app-copy">
+              <h3 class="app-name">Gabaritero</h3>
+              <p>Answer-sheet grading, in beta. Offline-first grader and test generator for teachers.</p>
+              <ul class="facts">
+                <li>Scan with the phone camera and mark answers on screen.</li>
+                <li>Grades and reports stay available without a connection.</li>
+              </ul>
+              <p class="t-small muted">React · TypeScript · Supabase · OpenCV.js</p>
+              <a class="app-link" href="https://app.gabaritero.com">Open Gabaritero <svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="app-card span-4">
+          <figure class="app-shot app-shot--wide"><img src="assets/img/ls9-mixer.jpg" srcset="assets/img/ls9-mixer-700.jpg 700w, assets/img/ls9-mixer.jpg 1400w" sizes="(max-width: 639px) 100vw, (max-width: 1023px) 90vw, 440px" alt="LS9 Remote mixer screen with channel strips and faders" width="1400" height="788" loading="lazy" data-source="client" data-subject="app"></figure>
+          <div class="app-copy">
+            <h3 class="app-name">LS9 Remote</h3>
+            <p>Mixer control for Android. Android control for the Yamaha LS9 digital mixer, built for live events and church services.</p>
+            <ul class="facts">
+              <li>Faders, EQ, dynamics and effects from the phone.</li>
+              <li>Scene recall and a full offline demo.</li>
+            </ul>
+            <p class="t-small muted">Java · Android · EtherMIDI · SysEx</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section g2" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="work-h">Work history</h2>
+        </div>
+        <div class="grid grid--top">
+          <article class="role-card span-6">
+            <div class="role-head">
+              <span class="role-logo"><img src="assets/img/logos/oracle.jpg" alt="Oracle" width="56" height="56"></span>
+              <div><p class="t-label">Dec 2020 to now</p><p class="t-card">Oracle</p></div>
+            </div>
+            <p class="role-title">Senior Software Engineer</p>
+            <ul class="facts">
+              <li>High-availability .NET/C# service on Linux, with a WPF desktop app alongside it.</li>
+              <li>Critical services moved to Oracle Cloud.</li>
+              <li>Inter-process communication secured with RSA key exchange and AES sessions.</li>
+            </ul>
+          </article>
+          <article class="role-card span-6">
+            <div class="role-head">
+              <span class="role-logo"><img src="assets/img/logos/unisalesiano.png" alt="UniSALESIANO" width="56" height="67"></span>
+              <div><p class="t-label">Jan 2026 to now</p><p class="t-card">UniSALESIANO</p></div>
+            </div>
+            <p class="role-title">Professor of Computer Engineering, Systems Development and Games Development</p>
+            <ul class="facts">
+              <li>Internet applications, web design, agile processes, databases and mobile applications.</li>
+              <li>Lecturing, project supervision and course material for the engineering and games courses.</li>
+            </ul>
+            <p class="t-small"><a class="link" href="https://unisalesiano.com.br">unisalesiano.com.br</a></p>
+          </article>
+        </div>
+        <div class="career" aria-hidden="true">
+          <p class="t-label">Path</p>
+          <ol class="career-list">
+            <li style="--i:0; --bh:16">
+              <span class="career-logo"><img src="assets/img/logos/wtc.png" alt="WTC Brasil" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2010</p>
+              <p class="career-co">WTC Brasil</p>
+              <p class="career-current" aria-hidden="true"></p>
+            </li>
+            <li style="--i:1; --bh:28">
+              <span class="career-logo"><img src="assets/img/logos/grupo-assessor.jpg" alt="Grupo Assessor" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2013</p>
+              <p class="career-co">Grupo Assessor</p>
+              <p class="career-current" aria-hidden="true"></p>
+            </li>
+            <li style="--i:2; --bh:40">
+              <span class="career-logo"><img src="assets/img/logos/sea-of-foxes.png" alt="Sea of Foxes" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2015</p>
+              <p class="career-co">Sea of Foxes</p>
+              <p class="career-current" aria-hidden="true"></p>
+            </li>
+            <li style="--i:3; --bh:50">
+              <span class="career-logo"><img src="assets/img/logos/colliseum.png" alt="Colliseum" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2016</p>
+              <p class="career-co">Colliseum</p>
+              <p class="career-current" aria-hidden="true"></p>
+            </li>
+            <li style="--i:4; --bh:58">
+              <span class="career-logo"><img src="assets/img/logos/centralar-logo.png" alt="CentralAr" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2016</p>
+              <p class="career-co">CentralAr</p>
+              <p class="career-current" aria-hidden="true"></p>
+            </li>
+            <li style="--i:5; --bh:70">
+              <span class="career-logo"><img src="assets/img/logos/solinftec.jpg" alt="Solinftec" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2019</p>
+              <p class="career-co">Solinftec</p>
+              <p class="career-current" aria-hidden="true"></p>
+            </li>
+            <li class="is-current" style="--i:6; --bh:92">
+              <span class="career-logo"><img src="assets/img/logos/oracle.jpg" alt="Oracle" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2020</p>
+              <p class="career-co">Oracle</p>
+              <p class="career-current">Now</p>
+            </li>
+            <li class="is-current" style="--i:7; --bh:92">
+              <span class="career-logo"><img src="assets/img/logos/unisalesiano.png" alt="UniSALESIANO" width="34" height="34"></span>
+              <span class="career-bar" aria-hidden="true"></span>
+              <p class="career-year">2026</p>
+              <p class="career-co">UniSALESIANO</p>
+              <p class="career-current">Now</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="group">
+        <p class="t-label">2010 to 2020</p>
+        <ol class="cv">
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/solinftec.jpg" alt="Solinftec" width="44" height="44"></span>
+              <p class="when">2019 to 2020</p>
+            </div>
+            <div class="what">
+              <p class="what-head">Solinftec · Embedded Systems Developer</p>
+              <p>STM32 firmware on FreeRTOS, a custom bootloader and a cross-platform configuration tool.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/centralar-logo.png" alt="CentralAr.com" width="44" height="44"></span>
+              <p class="when">2016 to 2018</p>
+            </div>
+            <div class="what">
+              <p class="what-head">CentralAr.com · Front-end and Web Analytics Developer</p>
+              <p>E-commerce front end with Angular 2, Node.js and PHP REST services, plus analytics for business metrics.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/colliseum.png" alt="Colliseum Arena" width="44" height="44"></span>
+              <p class="when">2016</p>
+            </div>
+            <div class="what">
+              <p class="what-head">Colliseum Arena · CTO</p>
+              <p>Live event broadcasts, WAN and LAN management, high-performance computers and publicity campaigns.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/sea-of-foxes.png" alt="Sea of Foxes" width="44" height="44"></span>
+              <p class="when">2015</p>
+            </div>
+            <div class="what">
+              <p class="what-head">Sea of Foxes · Full Stack Game Developer</p>
+              <p>Mobile games with Unreal Engine 4, 3ds Max and Substance Painter.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/grupo-assessor.jpg" alt="Grupo Assessor" width="44" height="44"></span>
+              <p class="when">2013 to 2015</p>
+            </div>
+            <div class="what">
+              <p class="what-head">Grupo Assessor Público · Web System Developer</p>
+              <p>Public health web systems with GeneXus and PostgreSQL.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/nestle.jpg" alt="Nestlé" width="44" height="44"></span>
+              <p class="when">2011 to 2013</p>
+            </div>
+            <div class="what">
+              <p class="what-head">Nestlé Brasil · Internship</p>
+              <p>Warehouse administration and industrial safety, with reports and daily operations.</p>
+            </div>
+          </li>
+          <li>
+            <div class="cv-side">
+              <span class="cv-logo"><img src="assets/img/logos/wtc.png" alt="WTC Brasil" width="44" height="44"></span>
+              <p class="when">2010 to 2011</p>
+            </div>
+            <div class="what">
+              <p class="what-head">WTC Brasil · Web Development Intern</p>
+              <p>Institutional websites and web systems with HTML, CSS, JS, PHP and MySQL.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="skills-h">Software and tools</h2>
+        <p>The tools I work with, grouped by area.</p>
+      </div>
+      <div class="skills-grid grid">
+        <article class="skill-group span-6">
+          <div class="skill-head"><p class="t-card skill-title">Programming Languages</p></div>
+          <ul class="chips">
+            <li><span class="chip"><img src="assets/icons/c-sharp.svg" alt="" width="16" height="16" loading="lazy"><span>C#</span></span></li>
+            <li><span class="chip"><img src="assets/icons/c.svg" alt="" width="16" height="16" loading="lazy"><span>C</span></span></li>
+            <li><span class="chip"><img src="assets/icons/cplusplus.svg" alt="" width="16" height="16" loading="lazy"><span>C++</span></span></li>
+            <li><span class="chip"><img src="assets/icons/rust.svg" alt="" width="16" height="16" loading="lazy"><span>Rust</span></span></li>
+            <li><span class="chip"><img src="assets/icons/dart.svg" alt="" width="16" height="16" loading="lazy"><span>Dart</span></span></li>
+            <li><span class="chip"><img src="assets/icons/javascript.svg" alt="" width="16" height="16" loading="lazy"><span>JavaScript</span></span></li>
+            <li><span class="chip"><img src="assets/icons/typescript.svg" alt="" width="16" height="16" loading="lazy"><span>TypeScript</span></span></li>
+            <li><span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" loading="lazy"><span>Python</span></span></li>
+          </ul>
+        </article>
+        <article class="skill-group span-6">
+          <div class="skill-head"><p class="t-card skill-title">Front end</p></div>
+          <ul class="chips">
+            <li><span class="chip"><img src="assets/icons/dotnet.svg" alt="" width="16" height="16" loading="lazy"><span>.NET</span></span></li>
+            <li><span class="chip"><img src="assets/icons/avaloniaui.svg" alt="" width="16" height="16" loading="lazy"><span>Avalonia</span></span></li>
+            <li><span class="chip"><img src="assets/icons/microsoft-windows-icon.svg" alt="" width="16" height="16" loading="lazy"><span>WPF</span></span></li>
+            <li><span class="chip"><img src="assets/icons/xamarin.svg" alt="" width="16" height="16" loading="lazy"><span>Xamarin</span></span></li>
+            <li><span class="chip"><img src="assets/icons/windows-retro.svg" alt="" width="16" height="16" loading="lazy"><span>WinForms</span></span></li>
+            <li><span class="chip"><img src="assets/icons/flutter.svg" alt="" width="16" height="16" loading="lazy"><span>Flutter</span></span></li>
+            <li><span class="chip"><img src="assets/icons/vue.svg" alt="" width="16" height="16" loading="lazy"><span>Vue</span></span></li>
+            <li><span class="chip"><img src="assets/icons/react.svg" alt="" width="16" height="16" loading="lazy"><span>React</span></span></li>
+            <li><span class="chip"><img src="assets/icons/angular.svg" alt="" width="16" height="16" loading="lazy"><span>Angular</span></span></li>
+          </ul>
+        </article>
+        <article class="skill-group span-6">
+          <div class="skill-head"><p class="t-card skill-title">Back end and cloud</p></div>
+          <ul class="chips">
+            <li><span class="chip"><img src="assets/icons/dotnet.svg" alt="" width="16" height="16" loading="lazy"><span>.NET</span></span></li>
+            <li><span class="chip"><img src="assets/icons/nodejs.svg" alt="" width="16" height="16" loading="lazy"><span>Node</span></span></li>
+            <li><span class="chip"><img src="assets/icons/php.svg" alt="" width="16" height="16" loading="lazy"><span>PHP</span></span></li>
+            <li><span class="chip"><img src="assets/icons/python.svg" alt="" width="16" height="16" loading="lazy"><span>Python</span></span></li>
+            <li><span class="chip"><img src="assets/img/logos/oracle.jpg" alt="" width="16" height="16" loading="lazy"><span>Oracle Cloud</span></span></li>
+            <li><span class="chip"><img src="assets/icons/aws.svg" alt="" width="16" height="16" loading="lazy"><span>AWS</span></span></li>
+            <li><span class="chip"><img src="assets/icons/google-cloud.svg" alt="" width="16" height="16" loading="lazy"><span>Google Cloud</span></span></li>
+            <li><span class="chip"><img src="assets/icons/docker.svg" alt="" width="16" height="16" loading="lazy"><span>Docker</span></span></li>
+            <li><span class="chip"><img src="assets/icons/kubernetes.svg" alt="" width="16" height="16" loading="lazy"><span>Kubernetes</span></span></li>
+            <li><span class="chip"><img src="assets/icons/nginx.svg" alt="" width="16" height="16" loading="lazy"><span>Nginx</span></span></li>
+          </ul>
+        </article>
+        <article class="skill-group span-6">
+          <div class="skill-head"><p class="t-card skill-title">Data</p></div>
+          <ul class="chips">
+            <li><span class="chip"><img src="assets/icons/postgresql.svg" alt="" width="16" height="16" loading="lazy"><span>PostgreSQL</span></span></li>
+            <li><span class="chip"><img src="assets/icons/mysql.svg" alt="" width="16" height="16" loading="lazy"><span>MySQL</span></span></li>
+            <li><span class="chip"><img src="assets/icons/sqlite.svg" alt="" width="16" height="16" loading="lazy"><span>SQLite</span></span></li>
+            <li><span class="chip"><img src="assets/img/logos/oracle.jpg" alt="" width="16" height="16" loading="lazy"><span>Oracle PL/SQL</span></span></li>
+            <li><span class="chip"><img src="assets/icons/mongodb.svg" alt="" width="16" height="16" loading="lazy"><span>MongoDB</span></span></li>
+            <li><span class="chip"><img src="assets/icons/firebase.svg" alt="" width="16" height="16" loading="lazy"><span>Firebase</span></span></li>
+            <li><span class="chip"><img src="assets/icons/redis.svg" alt="" width="16" height="16" loading="lazy"><span>Redis</span></span></li>
+          </ul>
+        </article>
+        <article class="skill-group span-6">
+          <div class="skill-head"><p class="t-card skill-title">Security</p></div>
+          <ul class="chips">
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>RSA</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>AES</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>Hashing</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>Secure randomness</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>Access control</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>Roles</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>Input validation</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>PII review</span></span></li>
+          </ul>
+        </article>
+        <article class="skill-group span-6">
+          <div class="skill-head"><p class="t-card skill-title">Embedded</p></div>
+          <ul class="chips">
+            <li><span class="chip"><img src="assets/icons/st.png" alt="" width="16" height="16" loading="lazy"><span>STM32</span></span></li>
+            <li><span class="chip"><img src="assets/icons/espressif.png" alt="" width="16" height="16" loading="lazy"><span>ESP32</span></span></li>
+            <li><span class="chip"><img src="assets/icons/avr.png" alt="" width="16" height="16" loading="lazy"><span>AVR</span></span></li>
+            <li><span class="chip"><img src="assets/icons/raspberry-pi.svg" alt="" width="16" height="16" loading="lazy"><span>Raspberry Pi</span></span></li>
+            <li><span class="chip"><img src="assets/icons/freertos.png" alt="" width="16" height="16" loading="lazy"><span>FreeRTOS</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>Bootloaders</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>SPI</span></span></li>
+            <li><span class="chip"><span class="chip-dot" aria-hidden="true"></span><span>I2C</span></span></li>
+            <li><span class="chip"><img src="assets/icons/usb.png" alt="" width="16" height="16" loading="lazy"><span>USB</span></span></li>
+            <li><span class="chip"><img src="assets/icons/ble.png" alt="" width="16" height="16" loading="lazy"><span>BLE</span></span></li>
+            <li><span class="chip"><img src="assets/icons/wifi.jpg" alt="" width="16" height="16" loading="lazy"><span>Wi-Fi</span></span></li>
+          </ul>
+        </article>
+        <article class="skill-group span-12">
+          <div class="skill-head"><p class="t-card skill-title">Media and stage</p></div>
+          <ul class="chips">
+            <li><span class="chip"><img src="assets/icons/blender.svg" alt="" width="16" height="16" loading="lazy"><span>Blender</span></span></li>
+            <li><span class="chip"><img src="assets/icons/3ds-max.png" alt="" width="16" height="16" loading="lazy"><span>Autodesk 3D Studio Max</span></span></li>
+            <li><span class="chip"><img src="assets/icons/substance-painter.png" alt="" width="16" height="16" loading="lazy"><span>Substance Painter</span></span></li>
+            <li><span class="chip"><img src="assets/icons/unrealengine-icon.svg" alt="" width="16" height="16" loading="lazy"><span>Unreal Engine</span></span></li>
+            <li><span class="chip"><img src="assets/icons/after-effects.svg" alt="" width="16" height="16" loading="lazy"><span>After Effects</span></span></li>
+            <li><span class="chip"><img src="assets/icons/premiere.svg" alt="" width="16" height="16" loading="lazy"><span>Premiere</span></span></li>
+            <li><span class="chip"><img src="assets/icons/photoshop.svg" alt="" width="16" height="16" loading="lazy"><span>Photoshop</span></span></li>
+            <li><span class="chip"><img src="assets/icons/illustrator.svg" alt="" width="16" height="16" loading="lazy"><span>Illustrator</span></span></li>
+            <li><span class="chip"><img src="assets/icons/ui-mic.svg" alt="" width="16" height="16" loading="lazy"><span>Live sound</span></span></li>
+            <li><span class="chip"><img src="assets/icons/ma-lighting.jpg" alt="" width="16" height="16" loading="lazy"><span>MA3 Lighting</span></span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="languages" aria-labelledby="languages-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="languages-h">Languages</h2>
+      </div>
+      <ul class="lang-grid grid">
+        <li class="lang-card span-6">
+          <img src="assets/img/flags/br.png" alt="Brazil" width="56" height="39">
+          <div class="lang-body">
+            <p class="t-card">Portuguese</p>
+            <p class="lang-level">Native</p>
+          </div>
+        </li>
+        <li class="lang-card lang-card--plain span-6">
+          <img src="assets/img/flags/gb.png" alt="United Kingdom" width="56" height="28">
+          <div class="lang-body">
+            <p class="t-card">English</p>
+            <p class="lang-level">Advanced, C1. IELTS Academic: Reading 8.5, Writing 7.0, Speaking 6.0, Listening 8.5.</p>
+          </div>
+        </li>
+        <li class="lang-card span-6">
+          <img src="assets/img/flags/es.png" alt="Spain" width="56" height="37">
+          <div class="lang-body">
+            <p class="t-card">Spanish</p>
+            <p class="lang-level">Basic</p>
+          </div>
+        </li>
+        <li class="lang-card lang-card--plain span-6">
+          <img src="assets/img/flags/jp.png" alt="Japan" width="56" height="37">
+          <div class="lang-body">
+            <p class="t-card">Japanese</p>
+            <p class="lang-level">Basic</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="life" aria-labelledby="life-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="life-h">Hobbies and volunteer work</h2>
+        <p>What I do outside the day job.</p>
+      </div>
+      <ul class="hobby-grid grid">
+        <li class="hobby-card span-3">
+          <span class="ic-tile ic-tile--40"><img class="ic ic-24" src="assets/icons/ui-camera.svg" alt="" width="24" height="24" loading="lazy"></span>
+          <div><p class="t-card">Film</p><p class="t-small">Cinematography, drone photography and slow-motion video.</p></div>
+        </li>
+        <li class="hobby-card span-3">
+          <span class="ic-tile ic-tile--40"><img class="ic ic-24" src="assets/icons/ui-box.svg" alt="" width="24" height="24" loading="lazy"></span>
+          <div><p class="t-card">3D</p><p class="t-small">Modelling, printing and game worlds.</p></div>
+        </li>
+        <li class="hobby-card span-3">
+          <span class="ic-tile ic-tile--40"><img class="ic ic-24" src="assets/icons/ui-music.svg" alt="" width="24" height="24" loading="lazy"></span>
+          <div><p class="t-card">Stage</p><p class="t-small">Live sound and lighting.</p></div>
+        </li>
+        <li class="hobby-card span-3">
+          <span class="ic-tile ic-tile--40"><img class="ic ic-24" src="assets/icons/ui-palette.svg" alt="" width="24" height="24" loading="lazy"></span>
+          <div><p class="t-card">Art</p><p class="t-small">Sketches and 3D work at <a class="link" href="https://www.instagram.com/leobottaro.art/">@leobottaro.art</a>.</p></div>
+        </li>
+      </ul>
+      <div class="production">
+        <p class="t-label">Live production</p>
+        <div class="production-grid grid">
+          <div class="production-card span-4"><img class="ic ic-20" src="assets/icons/ui-camera.svg" alt="" width="20" height="20" loading="lazy"><p class="t-small">Cameras, switchers and wireless video</p></div>
+          <div class="production-card span-4"><img class="ic ic-20" src="assets/icons/ui-mic.svg" alt="" width="20" height="20" loading="lazy"><p class="t-small">Digital audio consoles and wireless microphones</p></div>
+          <div class="production-card span-4"><img class="ic ic-20" src="assets/icons/demo/ui-lightbulb.svg" alt="" width="20" height="20" loading="lazy"><p class="t-small">MA3 lighting consoles and fixtures</p></div>
+        </div>
+      </div>
+      <div class="volunteer">
+        <div class="span-6">
+          <p class="t-label">Volunteer</p>
+          <p class="stat">15 years</p>
+        </div>
+        <div>
+          <p class="t-label">Church tech</p>
+          <p>Running the tech systems at my church: live broadcast, cameras, sound, lighting and high-performance computers.</p>
+          <p class="t-label">Open source translation</p>
+          <p>I translate open-source software into Brazilian Portuguese: Immich and PocketID.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--type">
+      <div class="section-head">
+        <h2 id="close-h">Contact</h2>
+        <p>Write to me about a project, a role or a collaboration.</p>
+      </div>
+      <a class="btn btn--primary" href="mailto:hello@leonardo.example">Email Leonardo</a>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-6 stack-4">
+          <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Leonardo Bottaro</a>
+          <p class="footer__lede">Software developer and professor.</p>
+          <p class="t-small">Brazil, remote and open to relocation.</p>
+        </div>
+        <div class="span-6 start-7 footer__col">
+          <p class="t-label">More</p>
+          <ul>
+            <li><a href="#apps">Apps</a></li>
+            <li><a href="#work">Work history</a></li>
+            <li><a href="#skills">Tools</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#life">Hobbies and volunteer work</a></li>
+            <li><a href="https://github.com/leocb">GitHub</a></li>
+            <li><a href="https://www.instagram.com/leobottaro.art/">Instagram @leobottaro.art</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Leonardo Bottaro &nbsp; <a href="privacy.html">Privacy</a> &nbsp; <a href="terms.html">Terms</a><br>Product names and logos are trademarks of their owners.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Quick actions">
+  <a class="btn btn--primary" href="mailto:hello@leonardo.example">Email Leonardo</a>
+</nav>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module">
+const links = [...document.querySelectorAll('.nav__links .nav__link[href^="#"]')];
+const map = new Map(links.map((a) => [a.getAttribute('href').slice(1), a]));
+const sections = [...map.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+const io = new IntersectionObserver((entries) => {
+  for (const entry of entries) {
+    if (!entry.isIntersecting) continue;
+    for (const a of links) a.removeAttribute('aria-current');
+    map.get(entry.target.id)?.setAttribute('aria-current', 'page');
+  }
+}, { rootMargin: '-45% 0px -50% 0px' });
+for (const section of sections) io.observe(section);
+</script>
+</body>
+</html>
